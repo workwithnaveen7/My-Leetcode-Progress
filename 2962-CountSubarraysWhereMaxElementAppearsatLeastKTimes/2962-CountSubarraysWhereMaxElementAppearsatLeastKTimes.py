@@ -1,4 +1,4 @@
-# Last updated: 4/29/2025, 11:05:24 PM
+# Last updated: 4/29/2025, 11:05:33 PM
 class Solution:
     def countSubarrays(self, nums: List[int], k: int) -> int:
         max_val=max(nums)

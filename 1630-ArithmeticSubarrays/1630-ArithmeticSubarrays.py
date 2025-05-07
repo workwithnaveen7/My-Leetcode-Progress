@@ -1,4 +1,4 @@
-# Last updated: 5/7/2025, 11:03:16 PM
+# Last updated: 5/7/2025, 11:03:22 PM
 class Solution:
     def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
         res=[]

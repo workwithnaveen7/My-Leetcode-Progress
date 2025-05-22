@@ -1,4 +1,4 @@
-# Last updated: 5/23/2025, 12:04:46 AM
+# Last updated: 5/23/2025, 12:16:04 AM
 class Solution:
     def removeOuterParentheses(self, S: str) -> str:
         res, opened = [], 0

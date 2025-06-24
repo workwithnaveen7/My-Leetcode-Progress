@@ -1,4 +1,4 @@
-# Last updated: 6/24/2025, 10:14:38 AM
+# Last updated: 6/24/2025, 10:14:48 AM
 class Solution:
     def shortestPalindrome(self, s: str) -> str:
         if not s or len(s) == 1:

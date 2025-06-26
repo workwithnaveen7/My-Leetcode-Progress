@@ -1,18 +1,21 @@
-# Last updated: 4/12/2025, 4:04:19 PM
+# Last updated: 6/26/2025, 9:24:12 AM
 class Solution:
-    def maxPoints(self, points: List[List[int]]) -> int:   
-        counter = 1
-        if len(points) < 2:
-            return 1
-        for i in range(len(points)):
-            egimList = {}
-            for j in range(i+1,len(points)):
-                y = points[j][1] - points[i][1]
-                x = points[j][0] - points[i][0]
-                if x != 0:
-                    egimList[y / x] = 1 + egimList.get(y / x, 0)
-                else:
-                    egimList['inf'] = 1 + egimList.get('inf', 0)
-            for key,value in egimList.items():
-                counter = max(counter,value)
-        return counter+1
+    def maxPoints(self, points: List[List[int]]) -> int:
+        if len(points)<=2:
+            return len(points)
+        
+        def find_slope(p1, p2):
+            x1, y1=p1
+            x2, y2=p2
+            if x1-x2==0:
+                return inf
+            return (y1-y2)/(x1-x2)
+        
+        ans = 1
+        for i, p1 in enumerate(points):
+            slopes = defaultdict(int)
+            for j, p2 in enumerate(points[i+1:]):
+                slope = find_slope(p1, p2)
+                slopes[slope]+=1
+                ans = max(slopes[slope], ans)
+        return ans+1
